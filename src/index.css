@@ -5,6 +5,13 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  background-color: #ffffff; /* 배경을 검은색으로 */
+  overflow-y: auto;
+}
+
+/* 배경사진 관련 */
+body {
+  background-image: url('/public/room_test_2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

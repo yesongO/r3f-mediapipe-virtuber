@@ -72,3 +72,213 @@ button:disabled {
   background-color: #4f46e5;
   box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
 }
+
+
+/* --- ✨ UI 오버레이 --- */
+.stream-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 650px; 
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+/* --- 왼쪽 패널 (정보 + 컨트롤) --- */
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 320px;
+}
+
+.info-box, .control-panel {
+  background: rgba(17, 24, 39, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  pointer-events: auto;
+}
+
+.stream-title {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.stream-status {
+  margin: 0;
+  color: #ef4444;
+  font-weight: 700;
+}
+
+.panel-title {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+  color: #fff;
+}
+
+.start-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #1e61cc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  color: white;
+  font-weight: 700;
+}
+
+.start-button:hover {
+  background-color: #6366f1;
+}
+
+.start-button:disabled {
+  background-color: #374151;
+  cursor: not-allowed;
+}
+
+.status-text {
+  margin: 12px 0 0 0;
+  text-align: center;
+  color: #9ca3af;
+}
+
+.expression-panel {
+  pointer-events: auto;
+  margin-top: 20px;
+}
+
+.panel-subtitle {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #d1d5db;
+}
+
+.expression-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.expression-buttons button {
+  background: rgba(64, 72, 90, 0.9);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.expression-buttons button:hover {
+  background-color: #4b5563;
+}
+
+.expression-buttons button.active {
+  background-color: #1e61cc;
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 0 15px rgba(102, 103, 150, 0.5);
+}
+
+/* --- 오른쪽 패널 (채팅창) --- */
+.right-panel {
+  width: 320px;
+}
+
+.chat-box {
+  background: rgba(17, 24, 39, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.chat-header {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chat-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #bfbcef;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-messages p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 14px;
+  color: #f5f5f5;
+}
+
+.chat-messages p span:first-child {
+  font-weight: 700;
+  color: #a78bfa; /* 유저 이름 색상 */
+  margin-right: 8px;
+}
+
+/* --- 웹캠 비디오 --- */
+/* .video-container {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  width: 240px;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  pointer-events: auto;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+} */
+
+/* --- 웹캠 비디오 숨기기 --- */
+.video-container {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  z-index: -10;
+  opacity: 0;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
